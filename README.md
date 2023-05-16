@@ -1,4 +1,4 @@
-# offensive-security
+# Offensive-security
 Project 2-Offensive Security
 hallenges for Project 2 - Day 1
 
@@ -302,3 +302,335 @@ Use Flag 10 Exploit to find the hidden directory.
 
 
 Click here for a Hint
+Challenges for Project 2 - Day 2
+
+
+Flag 1
+
+Category: Reconnaissance
+Use a Dossier open source tool found within OSInt Framework to find information about the WHOIS domain for the website totalrekall.xyz. Look for Flag1."
+
+
+
+Flag 2
+
+Category: Reconnaissance
+Flag 2 is the IP address of totalrekall.xyz.
+
+
+
+Flag 3
+
+
+Category: Reconnaissance
+
+
+SSL certificate research about totalrekall.xyz will lead you to Flag 3.
+
+
+Click here for a Hint
+crt.sh
+
+
+
+
+
+
+
+
+Flag 4
+
+Category: Scanning
+Run an Nmap or Zenmap scan on your network to determine the available hosts. Your network begins with 192.168.13. The flag is the count of hosts returned (not including the host you are scanning from).
+
+
+
+Flag 5
+
+Category: Scanning
+Run an agressive scan against the discovered hosts. The flag is the IP address of the host running Drupal.
+
+
+
+Flag 6
+
+Category: Scanning
+Run a Nessus scan against the host that ends with .12. View the details of the one critical vulnerability. The flag is the ID number at the top right of the page.
+
+
+
+Flag 7
+
+
+Category: Exploit
+
+
+Use an RCE exploit through Metasploit to exploit the host that ends with .10. Using the results from the agressive Nmap scan, try to to determine which exploit works. You may have to try many before finding the one that works. Once you have access to the host, search that server for Flag 7.
+
+
+Click here for a Hint
+Search for Tomcat JSP
+
+
+
+
+
+
+
+
+Flag 8
+
+Category: Exploit
+Use an RCE exploit through Metasploit to exploit the host that ends with .11. You will use the "Shocking" exploit. You may have to try many exploits before you find the one that works.
+
+Free Hint 1: You will need to set the TARGETURI option to /cgi-bin/shockme.cgi Once you have access to the host, search that server for Flag 8.
+
+Free Hint 2: Check your sudo privileges.
+
+
+
+Flag 9
+
+
+Category: Exploit
+
+
+On the same server that you exploited to find Flag 8, continue to search for Flag 9.
+
+
+Click here for a Hint
+Look for suspicious usernames.
+
+
+
+
+
+
+
+
+Flag 10
+
+
+Category: Post Exploitation
+
+
+Use an RCE exploit through Metasploit to exploit the host that ends with .12. Using the results from the Nessus scan, try to determine which exploit works. You may have to try many before you find the one that works. Once you have access to the host, search for a file which contains the flag. You will need to use a Meterpreter feature to access the flag within the file
+
+
+Free Hint - It may look like you get an error when you connect to the host, but the session was actually created.  Search how to manually connect to your session.
+
+
+Click here for a Hint
+Use Meterpreter to download the file to your machine, then extract the contents within the file to get the flag.
+
+
+
+
+
+
+
+
+Flag 11
+
+Category: Post Exploitation
+Use an RCE exploit through Metasploit to exploit the host that ends with .13. Using the results from the Nmap scan, try to to determine which exploit works. You may have to try many before you find the one that works. Once you have access to the host, use a Meterpreter command to determine  user that the Meterpreter server is running as on the host The username is the flag
+
+
+
+Flag 12
+
+Category: Post Exploitation
+Exploit the host that ends with .14. The exploit to access this host does NOT use a CVE. The hint for this exploit was displayed when viewing Flag 1. With this information, try and guess the password to access the host. Once you have accessed this host, use a privilege-escalation vulnerabilty to access the final flag.
+
+Free Hint: CVE-2019-14287
+
+Flag 1: OSINT
+
+
+Category: Reconnaisance
+
+
+Using OSINT, search for GitHub repositories belonging to totalrekall. Search the repository for user credentials. The flag is a user's cracked password.
+
+
+Click here for a hint
+Check the totalrekall GitHub repo here: https://github.com/totalrekall
+
+
+
+
+
+
+
+
+Flag 2: HTTP Enumeration
+
+
+Category: Reconnaisance
+
+
+The Windows network has a subnet of 172.22.117.0/24. The flag is in a file within a website on the internal network. Use the credentials that you found in Flag 1 to access this flag.
+
+
+Click here for a hint
+Check your port scan for any IP with port 80 open, and try the credentials that you cracked from GitHub in Flag 1.
+
+
+
+
+
+
+
+
+Flag 3: FTP Enumeration
+
+
+Category: Reconnasiance
+
+
+Utilize FTP to access the file containing the flag.
+
+
+Free Hint: Run an "agressive" scan to determine a method for accessing this file.
+
+
+Click here for a hint
+Google "anonymous access FTP."
+
+
+
+
+
+
+
+
+Flag 4: Metasploit
+
+
+Category: Exploitation
+
+
+Find a machine that is running the SLMail service. Determine an exploit to run using Metasploit. Don't forget to set your LHOST to the IP address of your local machine within the same subnet! Once you have exploited the machine, look for flag4.txt.
+
+
+Click here for a hint
+SLMail is exploitable via Metasploit. The flag is in the immediate directory once your shell opens.
+
+
+
+
+
+
+
+
+Flag 5: Common Tasks
+
+
+Category: Post-Exploitation
+
+
+You just gained access to Win10. What task should you consider doing first, in case you lose access to the machine?
+
+
+Free Hint: Consider evaluating unnecessary scheduled tasks.
+
+
+Click here for a hint
+Review the section on scheduled tasks.
+
+
+
+
+
+
+
+
+Flag 6: User Enumeration
+
+
+Category: Post-Exploitation
+
+
+Continue exploiting the same machine. The flag is the plaintext password of a specific user.
+
+
+Click here for a hint
+When dumping LSASS, make sure to check for local users and domain user credentials!
+
+
+
+
+
+
+
+
+Flag 7: File Enumeration
+
+
+Category: Post-Exploitation
+
+
+Continue on the same machine. Sometimes the answer is in "public," plain sight.
+
+
+Click here for a hint
+A series of folders under C:\\Users are always public.
+
+
+
+
+
+
+
+
+Flag 8: User Enumeration pt.2
+
+
+Category: Post-Exploitation
+
+
+Using credentials you found on the Win10 machine, laterally move to WinDC. Look for accounts on the new machine.
+
+
+Click here for a hint
+lsadump::cache
+
+
+
+
+
+
+
+
+Flag 9: Escalating Access
+
+
+Category: Lateral Movement
+
+
+Continue to enumerate the new machine, and you will be rewarded with this flag in the heart of its file system.
+
+
+Click here for a hint
+When performing file enumeration, always start at C:\\ or /root.
+
+
+
+
+
+
+
+
+Flag 10: Compromising Admin
+
+
+Category: Post-Exploitation
+
+
+The password hash of the user Administrator.
+
+
+Free Hint: Look at Day 3's lessons to determine a method.
+
+
+Click here for a hint

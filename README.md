@@ -1,6 +1,6 @@
 # Offensive-security
 Project 2-Offensive Security
-hallenges for Project 2 - Day 1
+Challenges for Project 2 - Day 1
 
 
 Flag 1
